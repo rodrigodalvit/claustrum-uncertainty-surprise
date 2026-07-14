@@ -1,108 +1,52 @@
-# Human claustrum neurons encode uncertainty and prediction errors during aversive learning
+# Human Claustrum Neurons Encode Uncertainty and Prediction Errors During Aversive Learning
 
-# Table of Contents
+This repository contains analysis code for the manuscript:
 
-- [Overview](#Overview)
-- [Abstract](#Abstract)  
-- [Software Requirements](#Software-Requirements)
-- [Directory Structure](#Directory-Structure)
-- [Installation](#Installation)
-- [Usage](#Usage)
-- [Citation](#Citation)
-- [Contributing](#Contributing)
-- [License](#License)
+**Human claustrum neurons encode uncertainty and prediction errors during aversive learning**
 
-# Overview
+The project analyzes rare human intracranial single-neuron recordings from the claustrum, anterior cingulate cortex, and amygdala during aversive learning. The main goal is to test whether human claustrum neurons encode computational variables related to uncertainty and prediction errors.
 
-This repository contains code for reproducing analyses from the paper *Human claustrum neurons encode uncertainty and prediction error during aversive learning*. 
+> **Repository note:**  
+> The official Damisah Lab repository is available at:  
+> https://github.com/damisahlab/claustrum-uncertainty-surprise  
+>
+> This personal repository is maintained by Rodrigo Dalvit Carvalho da Silva as a public reproducibility and portfolio copy of the analysis workflow.
 
-# Abstract
+---
 
-We recorded single-neuron activity from the human claustrum (CLA), anterior cingulate cortex (ACC), and amygdala (AMY) during aversive learning. CLA and ACC neurons showed structured, task-related responses, whereas AMY neurons were weakly modulated. CLA neurons encoded uncertainty and prediction errors, providing the first cellular level evidence that the human claustrum may play a role in predictive processing and in coordinating distributed neural systems during adaptive behavior.
+## Overview
 
-![](cla_uncertainty_pe.png)
+The claustrum is a thin, deep-brain structure that has been proposed to contribute to the coordination of distributed neural systems. Direct human single-neuron recordings from the claustrum are rare.
 
-# Software Requirements
+In this study, single-neuron activity was recorded from the human claustrum, anterior cingulate cortex, and amygdala during aversive learning. The analyses examine task-related neuronal responses and test whether neuronal activity encodes computational variables such as uncertainty and prediction errors.
 
-- **MATLAB 2023b** (**MathWorks, Natick, MA**) for Figures 1-3
-  
-  Required toolboxes:
-  
-  - Statistics and Machine Learning Toolbox
-  
-  - Signal Processing Toolbox
+The repository includes MATLAB, Python, and R scripts used for figure generation, statistical analysis, mutual information analysis, permutation testing, and visualization.
 
-- **Python 3.9** for Figures 4–5
+---
 
-# Directory Structure
+## Study summary
 
-Here's an overview of the repository structure:
+Single-neuron activity was recorded from three brain regions:
 
-```
-├── NeuroPair/                                       # Recurrent Graph Neural Network with Attention (Python)
-├── utilities/                                       # Helper functions for MATLAB analyses
-├── HumanCLAandACC_Fig1e.m                           # MATLAB script for Figure 1e
-├── HumanCLAandACC_Fig1f.m                           # MATLAB script for Figure 1f
-├── HumanCLAandACC_Fig1g.m                           # MATLAB script for Figure 1g
-├── HumanCLAandACC_Fig1h.m                           # MATLAB script for Figure 1h
-├── HumanCLAandACC_Fig1i.m                           # MATLAB script for Figure 1i
-├── HumanCLAandACC_Fig1j.m                           # MATLAB script for Figure 1j
-├── HumanCLAandACC_Fig2_HeatMap.m                    # MATLAB script for Figure 2 heatmap
-├── HumanCLAandACC_Fig2&3_MeanResponseStats.m        # MATLAB script for Figures 2 & 3 mean responses
-├── HumanCLAandACC_Fig2&3_PausersBursters_HeatmapZScoresStats.m  # MATLAB script for Figures 2 & 3 heatmap stats
-├── HumanCLAandACC_Fig2&3_PermutationTest.m          # MATLAB script for Figures 2 & 3 permutation test
-├── HumanCLAandACC_Fig2&3_exampleNeuron.m            # MATLAB script for Figures 2 & 3 example neuron
-├── HumanCLAandACC_Fig4&5_Chord_Diagram.R            # R script for Figures 4 & 5 chord diagram
-├── HumanCLAandACC_Fig4&5_Mutual_Information.py      # Python script for Figures 4 & 5 mutual information
-├── HumanCLAandACC_Fig4&5_cluster_based_perm.py      # Python script for Figures 4 & 5 cluster-based permutation analysis
-├── HumanCLAandACC_Fig4_histogram.py                 # Python script for Figure 4 histogram
-├── HumanCLAandACC_ExtFig2_FractionOfResponders.m    # MATLAB script for Extended Figure 2 fraction of responders
-├── HumanCLAandACC_ExtFig2_PercentageOfResponders.m  # MATLAB script for Extended Figure 2 percentage of responders
-├── HumanCLAandACC_ExtFig2_vennDiagrams.m            # MATLAB script for Extended Figure 2 Venn diagrams
-├── HumanCLAandACC_ExtFig3_Stats.m                   # MATLAB script for Extended Figure 3 stats
-├── HumanCLAandACC_ExtFig4_HeatMap.m                 # MATLAB script for Extended Figure 4 heatmap
-├── HumanCLAandACC_ExtFig4_HeatMap_Shuffled.m        # MATLAB script for Extended Figure 4 shuffled heatmap
-├── HumanCLAandACC_ExtFig8a.py                       # Python script for Extended Figure 8a
-├── HumanCLAandACC_ExtFig9a_e.py                     # Python script for Extended Figure 9a-e
-└── README.md                                        
-```
+- **CLA** — claustrum  
+- **ACC** — anterior cingulate cortex  
+- **AMY** — amygdala  
 
-# Installation
+The analysis shows that CLA and ACC neurons exhibit structured task-related responses, whereas AMY neurons show weaker modulation in this task context. CLA neurons encode uncertainty and prediction errors, providing cellular-level evidence that the human claustrum participates in predictive processing during adaptive behavior.
 
-Download or clone the repository
+![Claustrum uncertainty and prediction error summary](cla_uncertainty_pe.png)
 
-```bash
-git clone https://github.com/damisahlab/claustrum-uncertainty-surprise
-```
+---
 
-# Usage
+## Repository structure
 
-The analysis of each figure can be regenerated from that folder using the corresponding code for each figure. 
-
-**Example:** To generate Fig. 1e:
-
-                *HumanCLAandACC_Fig1e*
-
-# Citation
-
-If you use this repository (code, figures, or analysis pipeline) in academic work, please cite:
-
-> XX et al, "Human claustrum neurons encode uncertainty and prediction errors during aversive learning", *XX*, 2026
-
-### BibTeX
-```bibtex
-@article{XX2026,
-  title   = {Human claustrum neurons encode uncertainty and prediction errors during aversive learning},
-  author  = {...},
-  journal = {...},
-  year    = {YYYY},
-  doi     = {10.xxxx/xxxxx}
-}
-```
-## Contributing
-
-We welcome contributions!
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+```text
+.
+├── Codes/                                      # Main analysis scripts
+├── Data/                                       # Publicly available data files used by the scripts
+├── utilities/                                  # Helper functions for MATLAB analyses
+├── NeuroPair/                                  # Python code for recurrent graph neural network with attention
+├── CITATION.cff                                # Citation metadata
+├── LICENSE                                     # Repository license
+├── cla_uncertainty_pe.png                      # Project summary image
+└── README.md
